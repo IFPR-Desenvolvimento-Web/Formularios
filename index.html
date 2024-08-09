@@ -6,7 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- Include Editor JS files. -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+
+    <!-- Include Editor style. -->
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+
+
     <link rel="stylesheet" href="default.css">
+
+    <style>
+
+        #cor-favorita {
+
+            width: 200px;
+            padding: 5px 20px;
+            border-radius: 5px;
+
+        }
+
+        #cor-favorita option {
+
+            width: 200px;
+            padding: 5px 20px;
+
+        }
+
+        #cor-favorita option[value="vermelho"] {
+            background-color: red;
+        }
+
+        #cor-favorita option[value="azul"] {
+            background-color: blue;
+        }
+
+        #cor-favorita option[value="opcao_verde     "] {
+            background-color: green;
+        }
+
+        /* estilização do campo nome */
+        input#campo_nome {
+            width: 200px;
+            padding: 5px 20px;
+            border-radius: 5px;
+            border: 0 transparent;
+            outline: 0 transparent;
+
+            transition: all 0.5s;
+        }
+
+        input#campo_nome:focus{
+            background: orchid;
+            width: 250px;
+        }
+
+        input[type="submit"] {
+            width: 200px;
+            padding: 5px 20px;
+            border-radius: 5px;
+            background-color: chocolate;
+            transition: all 0.5s;
+        }
+
+        input[type="submit"]:hover{
+            background-color: brown;
+            color: white;
+        }
+
+    </style>
 
 </head>
 
@@ -40,7 +107,7 @@
         <div>
 
             <label for="campo_turno_manha">
-                <input type="checkbox" name="campo_turno" value="manhã" id="campo_turno_manha" checked>
+                <input type="radio" name="campo_turno" value="manhã" id="campo_turno_manha" checked>
                 manhã
             </label>
 
@@ -57,10 +124,51 @@
         </div>
 
         <div>
+            <label for="id_prato">
+                Prato prin. <input type="checkbox" value="prato_principal" id="id_prato" name="opcoes" checked>
+            </label>
+            
+            <label for="">
+                Salada <input type="checkbox" value="salada" name="opcoes">
+            </label>
+
+            <label for="">
+                Sobremesa <input type="checkbox" value="sobremesa" name="opcoes">
+            </label>
+
+        </div>
+
+        <div>
+            
+            <select name="cor_favorita" id="cor-favorita" required>
+                <option value="">selecione uma opção</option>
+                
+                <option value="opcao_verde">Verde</option>
+                <option value="vermelho">Vermelho</option>
+                <option value="azul">Azul</option>
+
+            </select>
+
+        </div>
+
+
+        <div>
+
+            <textarea name="" id=""></textarea>
+
+        </div>
+
+
+        <div>
             <input type="submit">
         </div>
     </form>
 
+
+    <!-- Initialize the editor. -->
+    <script>
+        new FroalaEditor('textarea');
+  </script>
 </body>
 
 </html>
